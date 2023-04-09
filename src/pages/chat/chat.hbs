@@ -1,0 +1,67 @@
+<div class="wrapper">
+  {{{sidebar}}}
+  <div class="chat">
+    <header class="chat__header header">
+      {{{searchInput}}}
+      {{{addUserButton}}}
+
+      {{#if isChatSelected}}
+        <div class="chat-info">
+          <div class="chat-info__user">
+            Сергей Ембулаев
+          </div>
+          {{{chatInfoButton}}}
+        </div>
+      {{/if}}
+
+    </header>
+    <section class="chat__content">
+      {{{chatList}}}
+      <div class="chat__window">
+        {{#if isChatSelected}}
+          <div class="chat-wrap-messages">
+            <div class="chat-messages">
+              <div class="chat-messages__message chat-messages__message_others">
+                В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
+              </div>
+              <div class="chat-messages__message chat-messages__message_my">
+                Современный IT-рынок требует от специалистов не только знания в определенной области, но и умение быстро адаптироваться к новым технологиям и решать задачи.
+              </div>
+              <div class="chat-messages__message chat-messages__message_others">
+                тест3
+              </div>
+              <div class="chat-messages__message chat-messages__message_others">
+                В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
+              </div>
+              <div class="chat-messages__message chat-messages__message_my">
+                <img src="{{photo}}" alt="">
+              </div>
+              <div class="chat-messages__message chat-messages__message_others">
+                тест3
+              </div>
+              <div class="chat-messages__message chat-messages__message_others">
+                В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
+              </div>
+              <div class="chat-messages__message chat-messages__message_my">
+                Современный IT-рынок требует от специалистов не только знания в определенной области, но и умение быстро адаптироваться к новым технологиям и решать задачи.
+              </div>
+              <div class="chat-messages__message chat-messages__message_others">
+                тест3
+              </div>
+            </div>
+          </div>
+          <form class="message-input" onsubmit="alert('Сообщение отправлено'); return false;">
+            {{{addAssetButton}}}
+            <textarea name="message" placeholder="Написать сообщение" class="message-input__field"></textarea>
+            {{{sendMessageButton}}}
+          </form>
+        {{else}}
+          <div class="chat-empty">
+            <img class="chat-empty__img" src="{{balloon}}" alt="">
+            <p class="chat-empty__text">Выберите чат чтобы отправить сообщение</p>
+          </div>
+        {{/if}}
+      </div>
+    </section>
+  </div>
+</div>

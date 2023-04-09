@@ -1,0 +1,56 @@
+<div class="wrapper">
+  {{{sidebar}}}
+  <form class="profile" onsubmit="alert('save'); return false">
+    <div class="profile__avatar">
+      <img src="{{emptyImg}}" alt="">
+    </div>
+    <div class="profile__name">Сергей Ембулаев</div>
+    <div class="profile__info">
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Имя</div>
+        </div>
+        <div class="profile__item-value">{{{firstNameInput}}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Фамилия</div>        
+          </div>
+        <div class="profile__item-value">{{{secondNameInput}}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Имя в чате</div>        
+          </div>
+        <div class="profile__item-value">{{{displayNameInput}}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Телефон</div>        
+          </div>
+        <div class="profile__item-value">{{{phoneInput}}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Почта</div>        
+          </div>
+        <div class="profile__item-value">{{{emailInput}}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Логин</div>        
+          </div>
+        <div class="profile__item-value">{{{loginInput}}}</div>        
+      </div>      
+    </div>
+    <div class="profile__controls">
+      {{{saveButton}}}
+    </div>
+  </form>
+</div>
+
+
+
+
+
+

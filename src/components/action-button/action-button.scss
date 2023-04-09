@@ -1,0 +1,19 @@
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2px solid #F6F7F8;
+  border-radius: 10px;
+  height: 60px;
+  width: 60px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border:1px solid #F6F7F8;
+  }
+
+  &__icon {
+    display: flex;
+  }
+}

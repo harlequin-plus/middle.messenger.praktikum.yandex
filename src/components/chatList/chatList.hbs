@@ -1,0 +1,18 @@
+<div class="chat__list">
+  {{#each messages}}
+    <div class="chat__message {{#if (and (eq this.selected "true") (eq ../isChatSelected true) )}}chat__message_selected{{/if}}">
+      <div class="chat__message-avatar {{this.colorClass}}">
+        {{#if this.avatar}}
+          <img class="chat__message-avatar-img" src="{{../avatar}}" alt="{{this.name}} — аватар">
+        {{else}}
+          <span class="chat__message-avatar-initials">{{this.initials}}</span>
+        {{/if}}
+      </div>
+      <div class="chat__message-info">
+        <div class="chat__message-name">{{this.name}}</div>
+        <div class="chat__message-text">{{this.text}}</div>
+      </div>
+      <time class="chat__message-time">{{this.time}}</time>
+    </div>
+  {{/each}}
+</div>

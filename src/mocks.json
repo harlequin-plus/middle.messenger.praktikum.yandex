@@ -1,0 +1,49 @@
+{
+  "messages": [
+    {
+      "selected": "true",
+      "name": "Sergey",
+      "time": "10:33",
+      "avatar": "",
+      "initials": "ЕС",
+      "text": "Спасибо за приглашение!",
+      "colorClass": "avatar_color1"
+    },
+    {
+      "selected": "false",
+      "name": "Anton",
+      "time": "14:20",
+      "avatar": "",
+      "initials": "АМ",
+      "text": "Привет, как дела?",
+      "colorClass": "avatar_color2"
+    },
+    {
+      "selected": "false",
+      "name": "Dima",
+      "time": "20:00",
+      "avatar": "true",
+      "initials": "ДТ",
+      "text": "Я уже на месте, где вы?",
+      "colorClass": "avatar_color3"
+    },
+    {
+      "selected": "false",
+      "name": "Ирина Михайлова",
+      "time": "14:20",
+      "avatar": "",
+      "initials": "ИМ",
+      "text": "Как настроить веб-сервер для ма...",
+      "colorClass": "avatar_color4"
+    },
+    {
+      "selected": "false",
+      "name": "Владимир Петров",
+      "time": "14:20",
+      "avatar": "",
+      "initials": "ВП",
+      "text": "Искусственный интеллект станови...",
+      "colorClass": "avatar_color5"
+    }
+  ]
+}
