@@ -1,0 +1,83 @@
+/* chat header*/
+
+.chat-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  &__user {
+    font-size: 20px;
+    color: #8299ba;
+    margin-right: 48px;
+  }
+}
+
+/* Messages in chat */
+.chat-wrap-messages {
+  height: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  max-height: calc(100vh - 210px);
+  width: 100%;
+  background: linear-gradient(270deg, rgba(249, 251, 255, 0) 0%, #f9fbff 100%);
+}
+
+.chat-messages {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px 24px 24px;
+  gap: 16px;
+
+  &__message {
+    display: inline-flex;
+    max-width: 560px;
+    padding: 24px 24px 40px 24px;
+
+    &_my {
+      background: #edeefc;
+      margin-left: auto;
+      border-radius: 20px 20px 0px 20px;
+    }
+    &_others {
+      background: #ddeeff;
+      border-radius: 20px 20px 20px 0px;
+    }
+  }
+}
+
+/* Форма ввода сообщения */
+.message-input {
+  width: 100%;
+  padding: 20px 36px 20px 12px;
+  border-top: 4px solid #f6f7f8;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  &__field {
+    flex-grow: 1;
+    font-size: 20px;
+    color: #8d8d8d;
+    border: 0;
+    outline: 0;
+    padding-top: 16px;
+    overflow: hidden;
+    resize: none;
+  }
+}
+
+/* Не выбранный чат */
+.chat-empty {
+  position: relative;
+  text-align: center;
+  min-width: 340px;
+  &__img {
+  }
+  &__text {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+  }
+}

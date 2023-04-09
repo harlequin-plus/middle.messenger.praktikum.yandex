@@ -1,0 +1,50 @@
+.text-button {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  max-width: 380px;
+  padding: 0 16px;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 0.2s;
+
+  @media(min-width:768px) {
+    height: 80px;
+    font-size: 30px;
+    padding: 0 24px;
+  }
+
+
+  &__red {
+    border:2px solid #FF5B5B;
+    background: #FF5B5B;
+    color:#fff;
+
+    &:hover {
+      background:#fff;
+      color:#FF5B5B;
+    }
+  }
+  &__dark {
+    border:2px solid #2A3647;
+    background: #2A3647;
+    color:#fff;
+
+    &:hover {
+      background: #fff;
+      color:#2A3647;
+    }
+  }
+  &__transparent {
+    border:2px solid #2A3647;
+    background: initial;
+    color:#2A3647;
+
+    &:hover {
+      background: #2A3647;
+      color:#fff;
+    }
+  }
+}
