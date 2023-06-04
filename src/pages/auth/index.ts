@@ -14,7 +14,7 @@ export default () => {
   return html({
     authButton: textButton('auth_button','submit','Войти', 'text-button__dark'),
     closeButton: actionButton('close_button', 'button', 'Закрыть окно', iconClose),
-    loginInput: formInput('login', 'text', 'Логин', 'Не правильный логин'),
-    passwordInput: formInput('password', 'password', 'Пароль', 'Не правильный пароль', false, true),
+    loginInput: formInput('login', 'text', 'Логин', 'Не правильный логин', '', false),
+    passwordInput: formInput('password', 'password', 'Пароль', 'Не правильный пароль', '', true),
   });
 }

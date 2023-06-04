@@ -14,8 +14,8 @@ export default () => {
     sidebar,
     emptyImg,
     saveButton: textButton('save_profile', 'submit', 'Сохранить', 'text-button__dark'),
-    oldPasswordInput: formInput('oldPassword', 'password', 'Старый пароль', 'Текст ошибки', '123456'),
-    newPasswordInput: formInput('newPassword', 'password', 'Новый пароль', 'Текст ошибки', '987654321'),
-    confirmNewPasswordInput: formInput('second_name', 'password', 'Повторите новый пароль', 'Текст ошибки', '987654321'),
+    oldPasswordInput: formInput('oldPassword', 'password', 'Старый пароль', 'Текст ошибки', '123456', false),
+    newPasswordInput: formInput('newPassword', 'password', 'Новый пароль', 'Текст ошибки', '987654321', false),
+    confirmNewPasswordInput: formInput('second_name', 'password', 'Повторите новый пароль', 'Текст ошибки', '987654321', false),
   })
 }

@@ -7,7 +7,7 @@ import chatList from "../../components/chatList";
 import searchInput from "../../components/search-input";
 import actionButton from "../../components/action-button";
 
-import assets from '../../helpers/assets.js';
+import assets from '../../helpers/assets';
 const {iconAssets, iconSend, iconAdd, iconChatInfo, photo, balloon} = assets;
 
 export default (isChatSelected) => {
