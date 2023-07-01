@@ -1,6 +1,6 @@
 {
   "extends": [
-    "airbnb",
+    "airbnb"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],

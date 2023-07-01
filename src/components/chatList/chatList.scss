@@ -6,9 +6,11 @@
   position: relative;
   transition: background 0.2s;
   cursor: pointer;
+
   &_selected {
     background: #deeafa;
   }
+
   &:hover {
     background: #deeafa;
   }
@@ -28,26 +30,31 @@
       object-fit: cover;
       height: 100%;
     }
+
     &-initials {
       font-weight: 400;
       font-size: 32px;
       line-height: 12px;
     }
   }
+
   &-info {
     display: flex;
     flex-flow: column;
     flex-grow: 1;
     margin-left: 16px;
   }
+
   &-name {
     font-size: 18px;
   }
+
   &-text {
     margin-top: 4px;
     font-size: 14px;
     color: #8d8d8d;
   }
+
   &-time {
     position: absolute;
     right: 16px;
@@ -61,15 +68,19 @@
 .avatar_color1 {
   background: #fffcb7;
 }
+
 .avatar_color2 {
   background: #b7ffd8;
 }
+
 .avatar_color3 {
   background: #ffb7b7;
 }
+
 .avatar_color4 {
   background: #b7d8ff;
 }
+
 .avatar_color5 {
   background: #ceb7ff;
 }

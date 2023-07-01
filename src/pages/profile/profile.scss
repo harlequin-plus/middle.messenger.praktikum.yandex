@@ -28,33 +28,37 @@
       height: 100%;
       top:0;
       left: 0;
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgb(0 0 0 / 70%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.2s;
     }
+
     &:hover {
       &::before {
         opacity: 1;
         visibility: visible;
       }
     }
+
     &-img {
 
     }
   }
+
   &__name {
     margin-top: 32px;
     font-size: 26px;
   }
+
   &__info {
     margin-top: 32px;
     width: 100%;
     max-width: 890px;
 
   }
+
   &__item {
-    
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -68,10 +72,12 @@
     &-name {
       width: 100%;
       font-weight: 600;
+
       &-text {
         
       }
     }
+
     &-value {
       width: 100%;
       text-align: left;
@@ -88,6 +94,7 @@
     max-width: 890px;
 
   }
+
   &__link {
     color:#8299BA;
     font-weight: 500;
