@@ -11,5 +11,5 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["./typings"]
- },
-} 
+  }
+}
