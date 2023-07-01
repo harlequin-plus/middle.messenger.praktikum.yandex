@@ -1,16 +1,20 @@
-import Handlebars from "handlebars";
-import tpl from "bundle-text:./profile.hbs";
+/* eslint-disable import/prefer-default-export */
+import tpl from './profile.hbs';
+import Block from '../../app/Block';
+import SidebarBlock from "../../components/sidebar";
+import assets from '../../helpers/assets';
 import "./profile.scss";
 
-import sidebar from "../../components/sidebar";
+const { emptyImg } = assets;
 
-import emptyImg from "/static/assets/icons/empty_img.svg";
+export class ProfilePage extends Block {
+  init() {
+    this.children.sidebar = new SidebarBlock();
+  }
 
-export default () => {
-  const html = Handlebars.compile(tpl);
-  
-  return html({
-    sidebar,
-    emptyImg,
-  })
+  render() {
+    return this.compile(tpl, {
+      emptyImg,
+    });
+  }
 }

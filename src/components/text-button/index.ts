@@ -1,7 +1,24 @@
-import Handlebars from "handlebars";
-import tpl from 'bundle-text:./text-button.hbs';
+import Block from '../../app/Block';
+import tpl from './text-button.hbs'
 import './text-button.scss';
 
-export default (id, type, title, cssClass ) => {
-  return Handlebars.compile(tpl)({id, type, title, cssClass});
+interface TextButtonProps {
+  id: string,
+  type: string,
+  title: string,
+  cssClass: string,
+  events: {
+    click: (e: Event) => void
+  }
 }
+class TextButton extends Block {
+  constructor(props: TextButtonProps) {
+    super("div", props);
+  }
+
+  render() {
+    return this.compile(tpl, { ...this.props });
+  }
+}
+
+export default TextButton;

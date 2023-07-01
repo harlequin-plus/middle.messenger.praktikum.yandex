@@ -1,15 +1,21 @@
-import Handlebars from "handlebars";
-import tpl from "bundle-text:./sidebar.hbs";
+import Block from '../../app/Block';
+import tpl from './sidebar.hbs';
 import "./sidebar.scss";
+import assets from '../../helpers/assets';
 
-import assets from "../../helpers/assets";
 const { logoImg, settingsIcon } = assets;
 
-export default () => {
-  const html = Handlebars.compile(tpl);
+class SidebarBlock extends Block {
+  constructor() {
+    super('div');
+  }
 
-  return html({
-    logoImg,
-    settingsIcon,
-  });
-};
+  render() {
+    return this.compile(tpl, {
+      logoImg,
+      settingsIcon,
+    });
+  }
+}
+
+export default SidebarBlock;
