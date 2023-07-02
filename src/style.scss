@@ -1,21 +1,26 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
   color: #2a3647;
 }
+
 img {
   max-width: 100%;
 }
+
 h1 {
   margin: 0;
 }
+
 a {
   text-decoration: none;
   color: #969696;
+
   &:hover {
     text-decoration: underline;
   }
@@ -27,13 +32,15 @@ button {
   background: initial;
   cursor: pointer;
 }
+
 input {
   border: 0;
   outline: none;
   font-size: 16px;
   color: #2a3647;
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
 }
+
 ::placeholder {
   color: #dedede;
 }
@@ -62,6 +69,7 @@ input {
   &:hover {
     opacity: 0.9;
   }
+
   &__item {
     padding: 8px;
   }
@@ -77,21 +85,24 @@ input {
   &__header {
     height: 100px;
     background: #fefefe;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
     width: 100%;
     padding: 20px 36px 20px 16px;
     display: flex;
     gap: 16px;
   }
+
   &__content {
     display: flex;
     flex-flow: row nowrap;
     flex-grow: 1;
   }
+
   &__list {
     border-right: 4px solid #f6f7f8;
     width: 360px;
   }
+
   &__window {
     flex-grow: 1;
     display: flex;
@@ -103,7 +114,7 @@ input {
 
 /* Модальное окно */
 .modal {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0 0 0 / 50%);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -126,12 +137,11 @@ input {
       max-width: 1000px;
     }
   }
+
   &__close {
     position: absolute;
     right: 24px;
     top: 24px;
-  }
-  &__content {
   }
 }
 
@@ -141,13 +151,15 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   &__title {
-    font-family: "Irish Grover";
+    font-family: "Irish Grover", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 66px;
     text-align: center;
   }
+
   &__fields {
     display: flex;
     flex-direction: column;
@@ -158,20 +170,30 @@ input {
     width: 100%;
     max-width: 700px;
   }
+
   &__group {
     display: flex;
     flex-flow: column;
     gap: 24px;
     width: 100%;
-    @media (min-width: 768px) {
+
+    @media (width >= 768px) {
       flex-flow: row;
     }
   }
+
   &__field {
     width: 100%;
     display: flex;
     flex-flow: column;
   }
+
+  &__error {
+    display: none;
+    margin-top: 8px;
+    color: #ff5b5b;
+  }
+
   &__input {
     height: 60px;
     padding: 24px;
@@ -185,11 +207,7 @@ input {
       }
     }
   }
-  &__error {
-    display: none;
-    margin-top: 8px;
-    color: #ff5b5b;
-  }
+
   &__link {
     margin-top: 24px;
     display: block;

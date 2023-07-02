@@ -1,9 +1,5 @@
-## Sprint 1
-[Link to Pull Request Sprint 1](https://github.com/harlequin-plus/middle.messenger.praktikum.yandex/pull/2)
-
-# iT Chat — Веб-мессенджер для друзей
-Реализованы страницы: регистрация, авторизация, чат, профиль, настройки профиля.
-Для удобства переключения между страницами вверху приложения встроена навигация.\
+## Sprint 2
+[Link to Pull Request Sprint 2](https://github.com/harlequin-plus/middle.messenger.praktikum.yandex/pull/4)
 
 ## Ссылка на приложение в Netlify
 [Открыть в Netlify](https://itchat.netlify.app/)
@@ -16,4 +12,3 @@
     npm run dev - сборка для разработки
     npm run build - сборка для продакшн. Соберет бандл в папку /dist/
     npm run start - запуск продакшн сборки и запуск веб-сервера. Откроет проект на 3000 порту
-

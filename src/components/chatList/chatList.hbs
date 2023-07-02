@@ -1,7 +1,9 @@
 <div class="chat__list">
   {{#each messages}}
-    <div class="chat__message {{#if (and (eq this.selected "true") (eq ../isChatSelected true) )}}chat__message_selected{{/if}}">
+     <div class="chat__message">
+      <!-- {{#if this.selected}}chat__message_selected{{/if}} -->
       <div class="chat__message-avatar {{this.colorClass}}">
+        
         {{#if this.avatar}}
           <img class="chat__message-avatar-img" src="{{../avatar}}" alt="{{this.name}} — аватар">
         {{else}}

@@ -9,6 +9,7 @@ import avatar from "/static/assets/images/avatar.png";
 import searchIcon from "/static/assets/icons/search.svg";
 import logoImg from "/static/assets/icons/logo.svg";
 import settingsIcon from "/static/assets/icons/settings.svg";
+import emptyImg from "/static/assets/icons/empty_img.svg";
 
 export default {
   iconAssets,
@@ -22,4 +23,5 @@ export default {
   searchIcon,
   logoImg,
   settingsIcon,
+  emptyImg,
 };
