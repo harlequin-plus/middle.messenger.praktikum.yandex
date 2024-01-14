@@ -10,7 +10,7 @@
   font-size: 20px;
   transition: all 0.2s;
 
-  @media(min-width:768px) {
+  @media(width >=768px) {
     height: 80px;
     font-size: 30px;
     padding: 0 24px;
@@ -27,6 +27,7 @@
       color:#FF5B5B;
     }
   }
+
   &__dark {
     border:2px solid #2A3647;
     background: #2A3647;
@@ -37,6 +38,7 @@
       color:#2A3647;
     }
   }
+
   &__transparent {
     border:2px solid #2A3647;
     background: initial;
