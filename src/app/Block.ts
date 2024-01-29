@@ -1,6 +1,6 @@
 import { TemplateDelegate } from 'handlebars';
-import EventBus from './EventBus'; 
 import { nanoid } from 'nanoid';
+import EventBus from './EventBus.ts';
 
 interface PropsAndChildren {
   [key: string]: any;
@@ -9,34 +9,37 @@ interface Props {
   [key: string]: any;
 }
 
-type EventCallback = (...args: any[]) => void;
-
 class Block {
   static EVENTS = {
-    INIT: "init",
-    FLOW_CDM: "flow:component-did-mount",
-    FLOW_CDU: "flow:component-did-update",
-    FLOW_RENDER: "flow:render"
+    INIT: 'init',
+    FLOW_CDM: 'flow:component-did-mount',
+    FLOW_CDU: 'flow:component-did-update',
+    FLOW_RENDER: 'flow:render',
   };
 
   public id: string = nanoid(8);
+
   public children: Record<string, Block | Block[]>;
+
   protected props: Props;
+
   private _element: HTMLElement | null = null;
+
   private _meta: {
     tagName: string;
     props: Props;
   } | null = null;
+
   private eventBus: () => EventBus;
 
-  constructor(tagName = "div", propsWidthChildren: PropsAndChildren = {}) {
+  constructor(tagName = 'div', propsWidthChildren: PropsAndChildren = {}) {
     const eventBus = new EventBus();
 
-    const { props, children } = this._getChildrenAndProps(propsWidthChildren)
+    const { props, children } = this._getChildrenAndProps(propsWidthChildren);
 
     this._meta = {
       tagName,
-      props
+      props,
     };
 
     this.children = children;
@@ -53,7 +56,7 @@ class Block {
     const props: Props = {};
 
     Object.entries(childrenAndProps).forEach(([key, value]) => {
-      if (Array.isArray(value) && value.length > 0 && value.every(v => v instanceof Block)) {
+      if (Array.isArray(value) && value.length > 0 && value.every((v) => v instanceof Block)) {
         children[key as string] = value;
       } else if (value instanceof Block) {
         children[key as string] = value;
@@ -63,11 +66,10 @@ class Block {
     });
 
     return { children, props };
-
   }
 
   private _addEvents(): void {
-    const {events = {}} = this.props as P & { events: Record<string, () => void> };
+    const { events = {} } = this.props as P & { events: Record<string, () => void> };
 
     Object.keys(events).forEach(eventName => {
       this._element?.addEventListener(eventName, events[eventName]);
@@ -75,7 +77,7 @@ class Block {
   }
 
   private _removeEvents(): void {
-    const {events = {}} = this.props as P & { events: Record<string, () => void> };
+    const { events = {} } = this.props as P & { events: Record<string, () => void> };
 
     if (this._element) {
       Object.keys(events).forEach((eventName) => {
@@ -103,7 +105,7 @@ class Block {
 
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
-  
+
   protected init(): void {
 
   }
@@ -165,7 +167,7 @@ class Block {
 
     Object.entries(this.children).forEach(([name, component]) => {
       if (Array.isArray(component)) {
-        contextAndStubs[name] = component.map(child => `<div data-id="${child.id}"></div>`)
+        contextAndStubs[name] = component.map(child => `<div data-id="${child.id}"></div>`);
       } else {
         contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
       }
