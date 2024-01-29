@@ -79,4 +79,3 @@ links.forEach((link) => {
     }
   });
 });
-
