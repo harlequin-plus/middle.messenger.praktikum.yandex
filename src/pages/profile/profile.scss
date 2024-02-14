@@ -33,6 +33,10 @@
       visibility: hidden;
       transition: all 0.2s;
     }
+    & img {
+      object-fit: cover;
+      height: 100%;
+    }
 
     &:hover {
       &::before {
@@ -86,15 +90,5 @@
     width: 100%;
     max-width: 890px;
 
-  }
-
-  &__link {
-    color:#8299BA;
-    font-weight: 500;
-    font-size: 18px;
-
-    &_red {
-      color: #FF5B5B;
-    }
   }
 }

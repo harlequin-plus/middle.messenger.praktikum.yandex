@@ -1,0 +1,15 @@
+
+<div class="users-in-chat users-in-chat-js">
+  <span class="show-list show-list-js" data-show="{{isShow}}">Пользователей в чате: {{countUsersByChat}}</span>
+  {{#if isShow}}
+  
+  <div class="users-in-chat__list">
+    
+    {{#each usersByChat}}
+      <div class="users-in-chat__item" data-user-id="{{this.id}}">
+        {{this.first_name}} {{this.second_name}}
+      </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

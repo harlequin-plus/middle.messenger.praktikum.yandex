@@ -28,16 +28,25 @@ const handleSubmit = (children: Record<string, any>) => {
   });
 
   if (errors.length === 0) {
-    const formData: Record<string, string> = {};
+    const formData: {[key: string]: any} = {};
 
     inputs.forEach((input: HTMLInputElement) => {
       const { name, value } = input;
       formData[name] = value;
     });
-
-    console.log(formData);
+    
+    return formData;
+    //return {
+    //  'success': true,
+    //  'data': formData,
+    //};
   } else {
-    console.log('Ошибка: '+ errors);
+    const result = {
+      'success': false,
+      'message': `Ошибка: ${errors}`,
+    }
+    alert(`Ошибка: ${errors}`)
+    return result;
   }
 };
 

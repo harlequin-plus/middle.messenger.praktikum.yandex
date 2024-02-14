@@ -4,19 +4,23 @@ import Block from '../../../../app/Block';
 import SidebarBlock from "../../../../components/sidebar";
 import FormInput from '../../../../components/form-input';
 import TextButton from '../../../../components/text-button';
-import assets from '../../../../helpers/assets';
 
 import handleSubmit from '../../../../helpers/formSubmit';
+import { userPasswordUpdate } from '../../../../requests/auth';
+import { Routes } from '../../../../app/Constants';
+import { Router } from '../../../../app/Router';
+import { userService } from '../../../../services/UserService';
+import { IUserChangePassword } from '../../../../type';
 
-const { emptyImg } = assets;
 
+const router = new Router('#app');
 export class ProfileEditPasswordPage extends Block {
   init() {
     this.children.sidebar = new SidebarBlock();
     this.children.oldPasswordInput = new FormInput({
-      name: 'password',
+      name: 'oldPassword',
       type: 'password',
-      title: 'Старый пароль',
+      title: 'Пароль',
       errorText: `Ошибка: Пароль должен быть от 8 до 40 символов, 
         обязательно хотя бы одна заглавная буква и цифра.`,
       showError: false,
@@ -27,7 +31,7 @@ export class ProfileEditPasswordPage extends Block {
       },
     });
     this.children.newPasswordInput = new FormInput({
-      name: 'password',
+      name: 'newPassword',
       type: 'password',
       title: 'Новый пароль',
       errorText: `Ошибка: Пароль должен быть от 8 до 40 символов, 
@@ -40,7 +44,7 @@ export class ProfileEditPasswordPage extends Block {
       },
     });
     this.children.confirmNewPasswordInput = new FormInput({
-      name: 'password',
+      name: 'newPassword',
       type: 'password',
       title: 'Повторите новый пароль',
       errorText: `Ошибка: Пароль должен быть от 8 до 40 символов, 
@@ -55,17 +59,21 @@ export class ProfileEditPasswordPage extends Block {
     this.children.saveButton = new TextButton({
       id: 'enter_button',
       type: 'submit',
-      title: 'Сохранить',
+      title: 'Сохранить!',
       cssClass: 'text-button__dark',
       events: {
-        click: () => handleSubmit(this.children),
+        click: () => this.changePassword(),
       },
     });
   }
 
+  changePassword() {
+    const data  = handleSubmit(this.children);
+    userService.updatePassword(data as IUserChangePassword);
+  }
+
   render() {
     return this.compile(tpl, {
-      emptyImg,
     });
   }
 }

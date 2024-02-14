@@ -3,10 +3,15 @@ export enum InputTypes {
   second_name = 'second_name',
   login = 'login',
   password = 'password',
+  oldPassword = 'oldPassword',
+  newPassword = 'newPassword',
   email = 'email',
   phone = 'phone',
   message = 'message',
   display_name = 'display_name',
+  avatar = 'avatar',
+  new_chat_name = 'new_chat_name',
+  user_login = 'user_login',
 }
 
 const nameCheck = /^(?!.*\d)(?!.*\s)(?!.*[-]{2})[A-Za-zА-ЯЁа-яё][A-Za-zА-ЯЁа-яё-]*$/;
@@ -23,6 +28,10 @@ const validate = (input: InputTypes, value: string): boolean | void => {
       return loginCheck.test(value);
 
     case InputTypes.password:
+      return passwordCheck.test(value);
+    case InputTypes.oldPassword:
+      return passwordCheck.test(value);
+    case InputTypes.newPassword:
       return passwordCheck.test(value);
 
     case InputTypes.first_name:
@@ -42,6 +51,16 @@ const validate = (input: InputTypes, value: string): boolean | void => {
 
     case InputTypes.message:
       return value.trim() !== '' && messageCheck.test(value);
+    
+    case InputTypes.avatar: {
+      return;
+    }
+    case InputTypes.new_chat_name: {
+      return true;
+    }
+    case InputTypes.user_login: {
+      return true;
+    }
 
     default:
       break;

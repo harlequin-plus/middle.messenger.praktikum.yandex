@@ -2,33 +2,60 @@
   {{{sidebar}}}
   <div class="chat">
     <header class="chat__header header">
-      {{{searchInput}}}
-      {{{addUserButton}}}
-
-      {{#if isChatSelected}}
+        <a href="/settings" class="chat-info__user">
+          {{user.first_name}} {{user.second_name}}
+        </a>
+      
         <div class="chat-info">
-          <div class="chat-info__user">
-            Сергей Ембулаев
-          </div>
-          {{{chatInfoButton}}}
+          {{#if isChatSelected}}
+            <div class="chat-info__adduser">
+              {{{userLoginInput}}}
+              {{{addUserButton}}}
+              {{{userList}}}
+            </div>
+          {{/if}}
+          
+          {{#if isChatSelected}}
+            {{{usersInChat}}}
+           <!--{{{chatInfoButton}}}-->
+          {{/if}}
         </div>
-      {{/if}}
+      
 
     </header>
     <section class="chat__content">
-      {{{chatList}}}
+      <div>
+                <div class="create-chat-wrap">
+          {{{chatNameInput}}}
+          {{{addChatButton}}} 
+        </div>
+        {{{chatList}}}
+
+      </div>
+      
       <div class="chat__window">
         {{#if isChatSelected}}
           <div class="chat-wrap-messages">
             <div class="chat-messages">
+              
+              {{#each messages}}
+                {{#if this.isMe}}
+                  <div class="chat-messages__message chat-messages__message_my">
+                    {{this.content}}
+                  </div>
+                {{else }}
+                  <div class="chat-messages__message chat-messages__message_others">
+                    {{this.content}}
+                    <span class="author">{{this.fullName}}</span>
+                  </div>
+                {{/if }}
+
+                
+              {{/each}}
+              
+          <!--
               <div class="chat-messages__message chat-messages__message_others">
-                В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
-              </div>
-              <div class="chat-messages__message chat-messages__message_my">
-                Современный IT-рынок требует от специалистов не только знания в определенной области, но и умение быстро адаптироваться к новым технологиям и решать задачи.
-              </div>
-              <div class="chat-messages__message chat-messages__message_others">
-                тест3
+                 В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
               </div>
               <div class="chat-messages__message chat-messages__message_others">
                 В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
@@ -36,18 +63,7 @@
               <div class="chat-messages__message chat-messages__message_my">
                 <img src="{{photo}}" alt="">
               </div>
-              <div class="chat-messages__message chat-messages__message_others">
-                тест3
-              </div>
-              <div class="chat-messages__message chat-messages__message_others">
-                В условиях растущей киберугрозы, защита данных становится все более важной задачей для компаний. Поэтому специалисты по кибербезопасности находятся в большом спросе и их профессия считается одной из самых перспективных в IT-индустрии. Важно помнить, что обеспечение безопасности данных необходимо не только для защиты бизнеса, но и для защиты личной информации пользователей.
-              </div>
-              <div class="chat-messages__message chat-messages__message_my">
-                Современный IT-рынок требует от специалистов не только знания в определенной области, но и умение быстро адаптироваться к новым технологиям и решать задачи.
-              </div>
-              <div class="chat-messages__message chat-messages__message_others">
-                тест3
-              </div>
+-->
             </div>
           </div>
           <form class="message-input" onsubmit="return false;">
