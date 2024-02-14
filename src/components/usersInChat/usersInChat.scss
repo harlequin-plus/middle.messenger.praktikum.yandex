@@ -1,5 +1,6 @@
 .users-in-chat {
   position: relative;
+
   &__list {
     cursor: pointer;
     position: absolute;
@@ -8,17 +9,19 @@
     min-height: 200px;
     width: 300px;
     background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+    border: 1px solid #999;
     display: flex;
     flex-flow: column;
     gap: 8px;
     z-index: 20;
   }
+
   &__item {
     padding: 8px;
     background: #eee;
     cursor: pointer;
     position: relative;
+
     &::after {
       content: "Удалить";
       font-size: 10px;
@@ -27,13 +30,16 @@
       right: 10px;
       top: 10px;
     }
+
     &:hover {
       background: #e5e5e5;
     }
   }
 }
+
 .show-list {
   cursor: pointer;
+  
   &:hover {
     text-decoration: underline;
   }
