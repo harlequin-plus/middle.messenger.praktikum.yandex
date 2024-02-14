@@ -1,6 +1,5 @@
 import tpl from './user-list.hbs';
 import Block from '../../app/Block';
-import "./user-list.scss";
 import { StoreEvents } from '../../app/Store';
 import { chatService } from '../../services/ChatService';
 

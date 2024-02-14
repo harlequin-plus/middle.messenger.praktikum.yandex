@@ -2,35 +2,35 @@
   position: relative;
   &__list {
     cursor: pointer;
-  position: absolute;
-  top:50px;
-  right:0;
-  min-height: 200px;
-  width: 300px;
-  background: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0, 0.2);
-  display: flex;
-  flex-flow: column;
-  gap: 8px;
-  z-index: 20;
-}
-&__item {
-  padding: 8px;
-  background: #eee;
-  cursor: pointer;
-  position: relative;
-  &::after {
-    content: 'Удалить';
-    font-size: 10px;
-    color:#999;
     position: absolute;
-    right:10px;
-    top:10px;
+    top: 50px;
+    right: 0;
+    min-height: 200px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+    z-index: 20;
   }
-  &:hover {
-    background: #e5e5e5;
+  &__item {
+    padding: 8px;
+    background: #eee;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: "Удалить";
+      font-size: 10px;
+      color: #999;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    &:hover {
+      background: #e5e5e5;
+    }
   }
-}
 }
 .show-list {
   cursor: pointer;
