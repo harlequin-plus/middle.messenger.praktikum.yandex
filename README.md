@@ -1,5 +1,5 @@
-## Sprint 2
-[Link to Pull Request Sprint 2](https://github.com/harlequin-plus/middle.messenger.praktikum.yandex/pull/4)
+## Sprint 3
+[Link to Pull Request Sprint 2](https://github.com/harlequin-plus/middle.messenger.praktikum.yandex/pull/8)
 
 ## Ссылка на приложение в Netlify
 [Открыть в Netlify](https://itchat.netlify.app/)
