@@ -17,6 +17,10 @@ export class AuthService {
       await this.getUser();
       router.go(Routes.messenger);
     } catch (e) {
+      if (e.reason === "User already in system") {
+        router.go(Routes.messenger);
+        return;
+      }
       alert(e.reason);
     }
   }
