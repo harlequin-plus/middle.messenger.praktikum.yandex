@@ -1,0 +1,54 @@
+<div class="wrapper">
+  {{{sidebar}}}
+  <div class="profile">
+    <a href="/settings/edit/avatar" class="profile__avatar">
+      <img src="{{avatar}}" alt="">
+    </a>
+    <div class="profile__name">{{user.first_name}} {{user.second_name}}</div>
+    <div class="profile__info">
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Имя</div>
+        </div>
+        <div class="profile__item-value">{{user.first_name}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Фамилия</div>        
+          </div>
+        <div class="profile__item-value">{{user.second_name}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Имя в чате</div>        
+          </div>
+        <div class="profile__item-value">{{user.display_name}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Телефон</div>        
+          </div>
+        <div class="profile__item-value">{{user.phone}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Почта</div>        
+          </div>
+        <div class="profile__item-value">{{user.email}}</div>        
+      </div>      
+      <div class="profile__item">
+        <div class="profile__item-name">
+          <div class="profile__item-name-text">Логин</div>        
+          </div>
+        <div class="profile__item-value">{{user.login}}</div>        
+      </div>      
+    </div>
+    <div class="profile__controls">
+
+      {{{changeProfileButton}}}
+      {{{changePasswordButton}}}
+      {{{logoutButton}}}
+      
+    </div>
+  </div>
+</div>

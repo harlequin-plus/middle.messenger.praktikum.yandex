@@ -1,0 +1,27 @@
+.sidebar {
+  width: 100px;
+  background: #2a3647;
+  padding: 15px;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__button {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgb(255 255 255 / 10%);
+    }
+
+    &-icon {
+      display: flex;
+    }
+  }
+}

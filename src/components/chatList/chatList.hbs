@@ -1,0 +1,20 @@
+<div class="chat__list">
+  {{#each chats}}
+     <div class="chat__message dialog-js" data-chat-id="{{this.id}}">
+      <!-- {{#if this.selected}}chat__message_selected{{/if}} -->
+      <div class="chat__message-avatar">
+        
+        {{#if this.avatar}}
+          <img class="chat__message-avatar-img" src="{{../avatar}}" alt="{{this.name}} — аватар">
+        {{else}}
+          <span class="chat__message-avatar-initials">{{this.id}}</span>
+        {{/if}}
+      </div>
+      <div class="chat__message-info">
+        <div class="chat__message-name">{{this.title}}</div>
+        <div class="chat__message-text">{{this.last_message.content}}</div>
+      </div>
+      <time class="chat__message-time">{{this.time}}</time>
+    </div>
+  {{/each}}
+</div>

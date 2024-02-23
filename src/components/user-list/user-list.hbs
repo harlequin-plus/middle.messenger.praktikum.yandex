@@ -1,0 +1,13 @@
+
+
+
+{{#if isFindUsers}}
+  <div class="chat-info__userlist">
+    {{#each searchUsers}}
+      <div class="chat-info__useritem adduser-js" data-user-id="{{this.id}}">
+      Логин: <strong> {{this.display_name}} </strong> <br>
+      Имя: {{this.first_name}} {{this.second_name}}
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
