@@ -6,8 +6,16 @@ import FormInput from '../../components/form-input';
 import assets from '../../helpers/assets';
 
 import handleSubmit from '../../helpers/formSubmit';
+import { userRegistration, getUser } from '../../requests/auth';
+import { Router } from '../../app/Router';
+import { Routes } from '../../app/Constants.ts';
+import NavLink from '../../components/nav-link/index.ts';
+import { authService } from '../../services/AuthService.ts';
+import { signUpData } from '../../type.ts';
 
 const { iconClose } = assets;
+
+const router = new Router('#app');
 
 export class RegistrationPage extends Block {
   init() {
@@ -100,11 +108,25 @@ export class RegistrationPage extends Block {
       title: 'Создать аккаунт',
       cssClass: 'text-button__red',
       events: {
-        click: () => handleSubmit(this.children),
+        click: () => this.regUser(),
+      },
+    });
+    
+    
+    this.children.navLink = new NavLink({
+      anchor: 'Войти',
+      href: Routes.auth,
+      events: {
+        click: () => router.go(Routes.auth),
       },
     });
   }
 
+  regUser() {
+    const data  = handleSubmit(this.children);
+    authService.signUp(data as signUpData);
+  }
+ 
   render() {
     return this.compile(tpl, {
       iconClose,

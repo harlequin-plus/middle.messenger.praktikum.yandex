@@ -49,6 +49,7 @@ input {
   display: flex;
   flex-flow: row nowrap;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* Меню с навигацией по страницам */

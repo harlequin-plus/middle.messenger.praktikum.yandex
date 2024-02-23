@@ -9,7 +9,7 @@ interface Props {
   [key: string]: any;
 }
 
-class Block {
+export class Block {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -129,6 +129,7 @@ class Block {
   }
 
   private _componentDidUpdate(oldProps: Props, newProps: Props): void {
+    //console.log(newProps)
     const response = this.componentDidUpdate(oldProps, newProps);
     if (!response) {
       return;

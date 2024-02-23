@@ -3,9 +3,14 @@ import tpl from './auth.hbs';
 import Block from '../../app/Block';
 import TextButton from '../../components/text-button';
 import FormInput from '../../components/form-input';
+import NavLink from '../../components/nav-link';
 import assets from '../../helpers/assets';
 
 import handleSubmit from '../../helpers/formSubmit';
+import { signInData } from '../../type';
+import { router } from '../../app/Router';
+import { Routes } from '../../app/Constants';
+import { authService } from '../../services/AuthService';
 
 const { iconClose } = assets;
 
@@ -44,10 +49,53 @@ export class AuthPage extends Block {
       title: 'Войти',
       cssClass: 'text-button__red',
       events: {
-        click: () => handleSubmit(this.children),
+        click: () => this.authUser(),
+      },
+    });
+    
+    this.children.navLink = new NavLink({
+      anchor: 'Создать аккаунт',
+      href: Routes.registration,
+      events: {
+        click: () => router.go(Routes.registration),
       },
     });
   }
+  
+  authUser() {
+    const data  = handleSubmit(this.children);
+    authService.signIn(data as signInData);
+  }
+
+  /*
+  async authUser() {
+
+    const data = await handleSubmit(this.children);
+    if (data?.success) {
+      console.log(data)
+      userAuthorization(data)
+						.then(() => {
+							
+              getUser().then(res => {
+                if (res.status) {
+                  window.store.set({user: res.response});
+                  router.go(Routes.messenger);
+                  console.log(window.store);
+                  alert(res.response.first_name)
+                }
+
+              });
+						})
+						.catch(res => {
+							if (res.reason === 'Login or password is incorrect') {
+								res.reason = 'Неверный логин или пароль';
+							}
+							alert([res.reason]);
+							
+						});
+    }
+  }
+  */
 
   render() {
     return this.compile(tpl, {

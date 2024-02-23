@@ -4,21 +4,9 @@ import Block from '../../app/Block';
 import TextButton from '../../components/text-button';
 import assets from '../../helpers/assets';
 const { balloon } = assets;
-interface WelcomePageProps {
-  isIndex: boolean,
-  is404: boolean,
-  is500: boolean
-}
+
 
 export class WelcomePage extends Block {
-  constructor(isIndex: boolean, is404: boolean, is500: boolean,) {
-    const props: WelcomePageProps = {
-      isIndex: isIndex,
-      is404: is404,
-      is500: is500,
-    };
-    super("div", props);
-  }
   
   init() {
     this.children.authButton = new TextButton({

@@ -1,10 +1,7 @@
 <div class="wrapper">
   {{{sidebar}}}
   <form class="profile" onsubmit="return false">
-    <div class="profile__avatar">
-      <img src="{{emptyImg}}" alt="">
-    </div>
-    <div class="profile__name">Сергей Ембулаев</div>
+    <div class="profile__name">{{user.first_name}} {{user.second_name}}</div>
     <div class="profile__info">
       <div class="profile__item">
         <div class="profile__item-name">

@@ -10,6 +10,36 @@
     color: #8299ba;
     margin-right: 48px;
   }
+
+  &__adduser {
+    display: flex;
+    position: relative;
+    gap: 10px;
+  }
+
+  &__userlist {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    min-height: 200px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #999;
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+    z-index: 20;
+  }
+
+  &__useritem {
+    padding: 8px;
+    background: #eee;
+    cursor: pointer;
+    
+    &:hover {
+      background: #e5e5e5;
+    }
+  }
 }
 
 /* Messages in chat */
@@ -20,21 +50,25 @@
   max-height: calc(100vh - 210px);
   width: 100%;
   background: linear-gradient(270deg, rgb(249 251 255 / 0%) 0%, #f9fbff 100%);
+  display: flex;
+  align-items: flex-end;
 }
 
 .chat-messages {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: flex-end;
   padding: 0 24px 24px;
   gap: 16px;
+  height: 100%;
 
   &__message {
     display: inline-flex;
     max-width: 560px;
     padding: 24px 24px 40px;
+    position: relative;
 
     &_my {
       background: #edeefc;
@@ -81,4 +115,22 @@
     width: 100%;
     top: 60%;
   }
+}
+
+.create-chat-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+}
+
+.author {
+  color: #bababa;
+  font-size: 10px;
+  position: absolute;
+  top: 8px;
+  left: 13px;
+  line-height: 8px;
 }

@@ -4,11 +4,11 @@ import Block from '../../../app/Block';
 import SidebarBlock from "../../../components/sidebar";
 import FormInput from '../../../components/form-input';
 import TextButton from '../../../components/text-button';
-import assets from '../../../helpers/assets';
-
 import handleSubmit from '../../../helpers/formSubmit';
+import { userService } from '../../../services/UserService.ts';
+import { IUserProfileData } from '../../../type';
+import { StoreEvents } from '../../../app/Store.ts';
 
-const { emptyImg } = assets;
 
 export class ProfileEditPage extends Block {
   init() {
@@ -19,7 +19,7 @@ export class ProfileEditPage extends Block {
       title: 'Имя',
       errorText: 'Ошибка: Вы не ввели Имя.',
       showError: false,
-      value: 'Сергей',
+      value: window.store.getState().user.first_name,
       events: {
         change: () => {},
       },
@@ -30,7 +30,7 @@ export class ProfileEditPage extends Block {
       title: 'Фамилия',
       errorText: 'Ошибка: Вы не ввели Фамилию.',
       showError: false,
-      value: 'Ембулаев',
+      value: window.store.getState().user.second_name,
       events: {
         change: () => {},
       },
@@ -41,7 +41,7 @@ export class ProfileEditPage extends Block {
       title: 'Имя в чате',
       errorText: 'Ошибка: Вы не ввели Имя в чате.',
       showError: false,
-      value: 'Sergey',
+      value: window.store.getState().user.display_name,
       events: {
         change: () => {},
       },
@@ -52,7 +52,7 @@ export class ProfileEditPage extends Block {
       title: 'Почта',
       errorText: 'Ошибка: Не допустимый почтовый адрес.',
       showError: false,
-      value: 'embulaev@gmail.com',
+      value: window.store.getState().user.email,
       events: {
         change: () => {},
       },
@@ -63,7 +63,7 @@ export class ProfileEditPage extends Block {
       title: 'Телефон',
       errorText: 'Ошибка: Не правильный формат телефона.',
       showError: false,
-      value: '+79993332211',
+      value: window.store.getState().user.phone,
       events: {
         change: () => {},
       },
@@ -76,7 +76,7 @@ export class ProfileEditPage extends Block {
         может содержать цифры, но не состоять из них, без пробелов, 
         без спецсимволов (допустимы дефис и нижнее подчёркивание.`,
       showError: false,
-      value: 'embulaev',
+      value: window.store.getState().user.login,
       events: {
         change: () => {},
       },
@@ -88,14 +88,24 @@ export class ProfileEditPage extends Block {
       title: 'Сохранить',
       cssClass: 'text-button__dark',
       events: {
-        click: () => handleSubmit(this.children),
+        click: () => this.updateProfile(),
       },
+    });
+
+    window.store.on(StoreEvents.Updated, () => {
+      this.setProps({
+        user: window.store.getState().user,
+      });
     });
   }
 
+  updateProfile() {
+    const data  = handleSubmit(this.children);
+    userService.updateProfile(data as IUserProfileData);
+  }
   render() {
     return this.compile(tpl, {
-      emptyImg,
+      user: window.store.getState().user
     });
   }
 }
