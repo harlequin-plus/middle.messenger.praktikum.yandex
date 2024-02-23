@@ -1,0 +1,6 @@
+{
+  "extension": ["ts"],
+  "spec": "**/src/app/*.test.ts",
+  "loader": ["ts-node/esm"],
+  "require": ["mocha-setup.ts"]
+} 
