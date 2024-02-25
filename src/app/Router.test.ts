@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { describe, it } from "mocha";
 import * as sinon from "sinon";
-import { router } from "./Router";
+import { router } from "./Router.ts";
 
 describe("Router", () => {
   const fakeContent = sinon.fake.returns(document.createElement("div"));

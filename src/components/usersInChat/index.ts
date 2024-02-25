@@ -25,7 +25,6 @@ class UsersInChatBlock extends Block {
 
 
   async onclick(e) {  
-    
     const showButton = e.target.closest('.show-list-js');
     if (showButton) {
       if (showButton.dataset.show == 'false') {
@@ -33,18 +32,16 @@ class UsersInChatBlock extends Block {
       } else {
         this.setProps({isShow: false});
       }
-        
     } 
-    const userId = e.target.closest('.users-in-chat__item').dataset.userId;
-    if (userId) {
-      const currentChat = window.store.getState().currentChat;
-      chatService.removeUsersFromChat({users: [userId], chatId: currentChat})
+    
+    const usersItem = e.target.closest('.users-in-chat__item');
+    if (usersItem) {
+      const userId = usersItem.dataset.userId;
+      if (userId) {
+        const currentChat = window.store.getState().currentChat;
+        chatService.removeUsersFromChat({users: [userId], chatId: currentChat})
+      }
     }
-    //const chatId = window.store.getState().currentChat;
-    //chatService.addUsersToChat({users: [userId], chatId: chatId})
-
-
-
   }
 
   render() {

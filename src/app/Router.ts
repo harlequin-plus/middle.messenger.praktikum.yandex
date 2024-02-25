@@ -1,4 +1,4 @@
-import { Route } from "./Route";
+import { Route } from "./Route.ts";
 
 export class Router {
   private static __instance: Router | null = null;

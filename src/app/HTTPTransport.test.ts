@@ -2,7 +2,7 @@
 import { describe, it } from 'mocha';
 
 import { expect } from 'chai'
-import { HTTPTransport, Methods } from './HTTPTransport';
+import { HTTPTransport, Methods } from './HTTPTransport.ts';
 
 describe('HTTPTransport', () => {
 
