@@ -5,19 +5,32 @@
     "start": "parcel build static/*.html && node server.js",
     "lint:eslint": "eslint .",
     "lint:stylelint": "npx stylelint \"*/*.scss\"",
-    "lint": "npm run lint:eslint && npm run lint:stylelint"
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
+    "prepare": "husky install",
+    "test": "mocha"
   },
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
     "@parcel/transformer-inline-string": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
+    "@types/chai": "^4.3.9",
+    "@types/jsdom": "^21.1.6",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "^20.8.7",
+    "@types/sinon": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
+    "chai": "^4.3.10",
     "eslint": "^8.42.0",
     "eslint-config-airbnb": "^19.0.4",
+    "husky": "^9.0.11",
+    "jsdom": "^22.1.0",
+    "mocha": "^10.2.0",
     "parcel": "^2.8.3",
+    "sinon": "^15.2.0",
     "stylelint": "^15.6.3",
     "stylelint-config-standard-scss": "^9.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
@@ -28,5 +41,6 @@
   "engines": {
     "node": ">12.0.0"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "type": "module"
 }

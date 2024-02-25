@@ -12,7 +12,7 @@ function queryStringify(data: Record<string, any>): string {
   }, '?');
 }
 
-enum Methods {
+export enum Methods {
   GET = "GET",
   PUT = "PUT",
   POST = "POST",
@@ -32,10 +32,10 @@ export class HTTPTransport {
 
   public get = (url: string, options: IOption) => {
     const newUrl = options.data
-      ? url + queryStringify(options.data as RecordString)
+      ? `${url}${queryStringify(options.data as Record<string, any>)}`
       : url;
-
-    return this.request(newUrl, { ...options });
+  
+    return this.request(newUrl, { ...options, method: Methods.GET });
   };
 
   public put = (url: string, options: IOption) => {

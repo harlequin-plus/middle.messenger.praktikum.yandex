@@ -1,13 +1,17 @@
-const express = require('express');
-const path = require('path'); // Обязательно подключите модуль path
+import express from 'express';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.static('./dist'));
+app.use(express.static(path.join(__dirname, './dist')));
 
 app.get('*', (_req, res) => {
-  res.sendFile('index.html', { root: path.join(__dirname, 'dist') }); // Указываем корневую директорию
+  res.sendFile('index.html', { root: path.join(__dirname, 'dist') });
 });
 
 app.listen(PORT, () => {
