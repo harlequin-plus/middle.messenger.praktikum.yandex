@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "typeRoots": ["./typings"]
+    "typeRoots": ["./typings"],
+    "module": "esnext"
   }
 }
